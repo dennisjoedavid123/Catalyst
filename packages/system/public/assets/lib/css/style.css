@@ -83,9 +83,10 @@ a,a:hover,a:focus {
 }
 .form-signin .form-control {
     position:relative;
-    font-size:16px;
+    font-size:12px;
     height:auto;
     padding:10px;
+    margin-bottom: 15px;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
     box-sizing:border-box;
@@ -93,7 +94,7 @@ a,a:hover,a:focus {
 .form-signin .form-control:focus {
     z-index:2;
 }
-.form-signin input[type="text"],.form-signin input[type="password"] {
+.form-signin input[type="text"],.form-signin input[type="email"],.form-signin input[type="password"] {
     margin-bottom:15px;
     border-radius:5px;
     -webkit-border-radius:5px;
@@ -3063,17 +3064,17 @@ ul.amounts li {
 .cmxform .form-group label.error {
     display:inline;
     margin:5px 0;
-    color:#B94A48;
+    color:#1fb5ac;
     font-weight:400;
 }
 input:focus:invalid:focus,textarea:focus:invalid:focus,select:focus:invalid:focus,.cmxform .form-group input.error,.cmxform .form-group textarea.error {
-    border-color:#B94A48 !important;
+    border-color:#1fb5ac !important;
 }
 #signupForm label.error {
     display:inline;
     margin:5px 0px;
     width:auto;
-    color:#B94A48;
+    color:#1fb5ac;
 }
 .checkbox,.checkbox:hover,.checkbox:focus {
     border: none;

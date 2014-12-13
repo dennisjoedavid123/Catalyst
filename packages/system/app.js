@@ -26,7 +26,9 @@ SystemPackage.register(function(app, auth, database) {
   SystemPackage.aggregateAsset('js', '../lib/js/jquery-ui/jquery-ui-1.10.1.custom.min.js');
   SystemPackage.aggregateAsset('js', '../lib/js/scripts.js');
   SystemPackage.aggregateAsset('js', '../lib/js/jquery.nicescroll.js');
-  SystemPackage.aggregateAsset('js', '../lib/js/jquery.js');
+  SystemPackage.aggregateAsset('js', '../lib/js/jquery.shuffle.min.js');
+  SystemPackage.aggregateAsset('js', '../lib/js/people.js');
+
 
   // The middleware in config/express will run before this code
 

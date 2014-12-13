@@ -1,0 +1,32 @@
+[
+ {
+    "name":"Vasu Smart",
+    "shortname":"vasu_smart",
+    "designation":"graphics designer",
+    "company":"xyz company"
+  },
+  {
+    "name":"Apple Fruit",
+    "shortname":"apple_fruit",
+    "designation":"software developer",
+    "company":"abc company"
+  },
+  {
+    "name":"Mango Shake",
+    "shortname":"mango_shake",
+    "designation":"testing analyst",
+    "company":"mno company"
+  },
+  {
+    "name":"Orange Pulp",
+    "shortname":"orange_pulp",
+    "designation":"marketing head",
+    "company":"rst company"
+  },
+  {
+    "name":"Grapes Grey",
+    "shortname":"grapes_grey",
+    "designation":"vfx artist",
+    "company":"jkl company"
+  }
+ ]

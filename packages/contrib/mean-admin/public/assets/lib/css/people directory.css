@@ -1,0 +1,162 @@
+
+.list-wrapper{
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.list-search{
+	width: 100%;
+	height: 40px;
+	background: white;
+}
+
+.list{
+	width: 300px;
+	min-width: 250px;
+	height: 100px;
+	color: #aaa;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	text-decoration: none;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+	transition : linear 0.5s;
+	-webkit-transition: linear 0.5s;
+    overflow: hidden;
+    text-overflow: visible; 
+}
+.list-header{
+	display: block;
+	float: left;
+	margin-top: 13px;
+	padding-left: 10px;
+}
+.list-searchbar{
+	width: 200px;
+	padding: 6px;
+	float: right;
+	margin-top: -7px;
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+.list-image{
+	float:left;
+	height: 86px;
+	width: 86px;
+	border-radius: 86px;
+	border: 3px solid #1FB5AD;
+	margin-left: 10px;
+	margin-top: 8px;
+}
+.list-image img{
+	height: 80px;
+	width: 80px;
+	border-radius: 80px;
+}
+
+.list-details{
+	float: left;
+	position: relative;
+	padding: 10px 0px 0px 20px;
+}
+.list-name{
+	font-weight: bold;
+	color: #1FB5AD;
+	font-size: 14px;
+	margin-bottom: 0px;
+}
+.list-company{
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+
+
+.list.ng-enter{
+	opacity: 0;
+}
+
+.list.ng-enter-active{
+	opacity: 1;
+}
+
+.list.ng-leave{
+	opacity: 0;
+	transition : ease-out 0.1s;
+	-webkit-transition: ease-out 0.1s;
+}
+
+.list.ng-leave-active{
+	opacity: 0;
+}
+
+@media screen and (max-width: 1570px) {
+
+.list{
+	width: 22%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 1370px) {
+
+.list{
+	width: 32%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 1260px) {
+
+.list{
+	width: 30%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 1110px) {
+
+.list{
+	width: 45%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 967px) {
+
+.list{
+	width: 45%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 870px) {
+
+.list{
+	width: 90%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 760px) {
+
+.list{
+	width: 45%;
+	height: 100px;
+}
+
+}
+@media screen and (max-width: 626px) {
+
+.list{
+	width: 90%;
+	height: 100px;
+}
+
+}
+

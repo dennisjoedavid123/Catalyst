@@ -12,6 +12,7 @@ var Admin = new Module('mean-admin');
  */
 
 Admin.register(function(app, auth, database) {
+    
     Admin.aggregateAsset('css', 'admin.css');
     Admin.aggregateAsset('css', 'themes.css');
     Admin.aggregateAsset('js', 'users.js');
@@ -20,16 +21,8 @@ Admin.register(function(app, auth, database) {
     Admin.aggregateAsset('js', 'ng-clip.js');
     Admin.aggregateAsset('js', 'settings.js');
 
-
-    Admin.aggregateAsset('js', '../lib/js/modernizr.min.js');
-    Admin.aggregateAsset('js', '../lib/js/jquery.shuffle.min.js');
-    Admin.aggregateAsset('js', '../lib/js/people.js');
-    
-    
-    Admin.aggregateAsset('css', '../lib/css/layout.min.css');
-    Admin.aggregateAsset('css', '../lib/css/uielement.min.css');
-    
-    
+    Admin.aggregateAsset('css', '../lib/css/people directory.css');
+    Admin.aggregateAsset('js', '../lib/js/people directory.js');
 
 
     
