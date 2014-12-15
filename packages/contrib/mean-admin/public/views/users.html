@@ -1,0 +1,37 @@
+<section id="main-content">
+        <section class="wrapper">
+        <!-- page start-->
+
+        <div class="row" ng-controller = "MyController">
+            <div class="col-sm-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        People Directory
+                        <input class="list-searchbar"ng-model="query" placeholder="Search for employees" autofocus>
+                    </header>
+                    
+                    <div class="panel-body">
+                        <ul class="artistlist">
+                            <li ng-animate="'animate'" class="list" ng-repeat="item in artists | filter: query">
+                                <div class="list-image"><img ng-src="/lib/images/{{item.shortname}}_tn.jpg"></div>
+                                <div class="list-details">
+                                    <p class="list-name">{{item.name}}</p>
+                                    <p>{{item.designation}}</p>
+                                    <p class="list-company">{{item.company}}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        
+        <!-- page end-->
+        </section>
+</section>
+
+
+
+
+

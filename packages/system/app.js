@@ -19,6 +19,16 @@ SystemPackage.register(function(app, auth, database) {
   SystemPackage.routes(app, auth, database);
 
   SystemPackage.aggregateAsset('css', 'common.css');
+  SystemPackage.aggregateAsset('css','../lib/css/style.css');
+  SystemPackage.aggregateAsset('css','../lib/css/style-responsive.css');
+  SystemPackage.aggregateAsset('css','../lib/css/bootstrap-reset.css');
+  SystemPackage.aggregateAsset('css', '../lib/font-awesome/css/font-awesome.css');
+  SystemPackage.aggregateAsset('js', '../lib/js/jquery-ui/jquery-ui-1.10.1.custom.min.js');
+  SystemPackage.aggregateAsset('js', '../lib/js/scripts.js');
+  SystemPackage.aggregateAsset('js', '../lib/js/jquery.nicescroll.js');
+  SystemPackage.aggregateAsset('js', '../lib/js/jquery.shuffle.min.js');
+  SystemPackage.aggregateAsset('js', '../lib/js/people.js');
+
 
   // The middleware in config/express will run before this code
 

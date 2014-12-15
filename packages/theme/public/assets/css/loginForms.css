@@ -272,6 +272,7 @@ background: url("/theme/assets/img/bg.png");
     float: left;
     background: url("/theme/assets/img/devide_line.png") no-repeat 50% 30%;
     padding: 0 10px;
+    display: none;
 }
 
 .register-form .login-form__center {

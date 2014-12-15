@@ -1,16 +1,87 @@
-<div data-ng-controller="RegisterCtrl">
-    <div ng-repeat="error in registerError">
-        <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
-    </div>
-    <div class="alert alert-danger animated fadeIn" ng-show="usernameError">{{usernameError}}</div>
-    <div class="alert alert-danger animated fadeIn" ng-show="emailError">{{emailError}}</div>
-    <form id="register_form" ng-submit="register()">
+<body>
+<div data-ng-controller="RegisterCtrl" id="login-container">
+    
+    
+    
+    <form class="form-signin" id="register_form" ng-submit="register()">
+        <h2 class="form-signin-heading">registration now</h2>
+        <div class="login-wrap">
+            <p>Enter your personal details below</p>
+              
+        <div class="input-wrapper">
+            <input class="form-control" required id="name" type="text" name="name" placeholder="Full Name"ng-model="user.name" autofocus>
+            <!--<div class="error_message">Please enter a correct info #</div>-->
+            <span class="pic user"></span>
+        </div>
+            
+            <!--<input type="text" class="form-control" placeholder="Address" autofocus> -->
+
+        <div class="input-wrapper">
+            <input required id="email_block" class="form-control" type="email" name="email" placeholder="Email Address" ng-model="user.email">
+            <span class="pic email"></span>
+        </div>
+
+         <!--   <input type="text" class="form-control" placeholder="City/Town" autofocus>
+            <div class="radios">
+                <label class="label_radio col-lg-6 col-sm-6" for="radio-01">
+                    <input name="sample-radio" id="radio-01" value="1" type="radio" checked /> Male
+                </label>
+                <label class="label_radio col-lg-6 col-sm-6" for="radio-02">
+                    <input name="sample-radio" id="radio-02" value="1" type="radio" /> Female
+                </label>
+            </div>
+          
+            <p> Enter your account details below</p>
+           -->  
+            <!--<input type="text" class="form-control" placeholder="User Name" autofocus> -->
+
+      <div class="input-wrapper">
+             <input required id="username" type="text" name="username" placeholder="Username" ng-model="user.username" class="form-control">
+            <span class="pic email"></span>
+      </div>
+
+      <div class="input-wrapper">
+            <input required id="password_block" name="password" type="{{input.type}}"
+                   placeholder="{{input.placeholder}}" ng-model="user.password" class="form-control">
+      </div>
+
+      <div class="input-wrapper">
+            <input required id="confirm_password" name="confirm_password" type="{{input.type}}" placeholder="{{input.placeholderConfirmPass}}" ng-model="user.confirmPassword" class="form-control">
+        <span class="pic confirm"> </span>
+        </div>
+  
+
+
+            <!--<input type="password" class="form-control" placeholder="Password"> 
+            <input type="password" class="form-control" placeholder="Re-type Password"> -->
+            <label class="checkbox">
+                <input type="checkbox" value="agree this condition"> I agree to the Terms of Service and Privacy Policy
+            </label>
+            <div ng-repeat="error in registerError">
+                <div class="alert alert-danger animated fadeIn">{{error.msg}}</div>
+            </div>
+            <button class="btn btn-lg btn-login btn-block" type="submit">Sign Up</button>
+
+            <div class="registration">
+                Already Registered.
+                <a class="" ui-sref='auth.login'>
+                    Login
+                </a>
+            </div>
+
+        </div>
+
+      </form>
+
+
+
+
+    <!--<form id="register_form" ng-submit="register()">
         <h2>Sign Up</h2>
 
         <div class="input-wrapper">
             <input required id="name" type="text" name="name" placeholder="Full Name"
                    ng-model="user.name">
-
             <div class="error_message">Please enter a correct info #</div>
             <span class="pic user"></span>
         </div>
@@ -62,5 +133,12 @@
         <div class="woman_ninja_bottom">
             <img src="/theme/assets/img/woman_ninja.png" alt="#">
         </div>
-    </form>
+    </form> -->
 </div>
+</body>
+<script type="text/javascript">
+document.body.style.backgroundColor="#32323A";
+//document.body.style.marginTop="80px";
+var myElement = document.querySelector("#login-container");
+myElement.style.marginTop= "-80px";
+</script>

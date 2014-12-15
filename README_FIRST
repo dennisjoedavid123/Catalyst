@@ -1,0 +1,38 @@
+1. In a mean project  ur server.js file is the server starter
+2. Once the server is up it automatically loads the file from packages /system
+3. Consider every thing in the project as a package 
+           Eg. Admin package / Articles package etc
+4. Each package is setup like this 
+            app.js -> starter for each package where your individual references / libs etc goes
+            public -> which usually is ur views that u get as a response to a web request
+                      eg. when you type localhost you are led to a page that is a page from a public folder in one of these packages 
+            server  -> server / database / busienss logic based interactions done here 
+
+ 5. public folder contains
+                    assets -> css /img /static / lib etc 
+                        css  -> custom css for this package goes 
+                        img  -> custom images that u need to use 
+                        static -> any static text or images or standalone content goes here
+                        lib -> any external css / js libraries go in here 
+                    controller -> Controls each request and directs it to the correct page to deliver a response
+                    routes -> redirects a URL request to a code request internally to access the particular method for a particular event
+                    services -> api and other services 
+                    tests  -> unit test cases
+                    views  -> where the html pages reside
+
+ 6. server folder contains more or less the same setup as the public folder except that sometimes it might or might not contain views 
+
+ 7. app.js
+                         This is the critical bugger that will screw ur life in meanio
+                     Rule 1 : all css included under the assets/css folder in public will be automatically consumed so no need to include it explicity. 
+                     Rule 2 : Any new css / js you want to include from say under the lib folder it needs to be aggregated into the Module say like 
+                     
+                     SystemPackage.aggregateAsset('css', 'common.css');
+                     SystemPackage.aggregateAsset('js', 'common.js',{absolute:false});
+
+
+                     Now all the css / js will be available under the aggregated.css / aggregated.js files during runtime.
+
+ 8. Use Robo Mongo to see your database and the content inside .
+
+
