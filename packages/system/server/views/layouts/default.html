@@ -3,14 +3,19 @@
 {% include '../includes/head.html' %}
 
 <body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state">
+    
+    {% if loggedIn %}
+
     <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>
-    {% if adminEnabled %}
-    <section class="admin-menu">
-        <div data-ng-include="'/mean-admin/views/index.html'"></div>
-    </section>
+
     {% endif %}
-    <section class="content">
-        <section class="container">
+    {% if adminEnabled %}
+
+        <div data-ng-include="'/mean-admin/views/index.html'"></div>
+
+    {% endif %}
+    <section id="main-content" class="content" data-ng-class="{'merge-left':isNavClicked == true}">
+        <section class="container" style=" width:80%;padding-top:20px">
             {% block content %}{% endblock %}
         </section>
     </section>

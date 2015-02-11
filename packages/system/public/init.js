@@ -17,6 +17,7 @@ for (var index in window.modules) {
 }
 
 // Default modules
+// added dialogs as a default module
 var modules = ['ngCookies', 'ngResource', 'ui.bootstrap', 'ui.router'];
 modules = modules.concat(packageModules);
 

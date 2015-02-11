@@ -22,8 +22,8 @@ angular.module('mean.users')
         });
     }
   ])
-  .controller('LoginCtrl', ['$scope', '$rootScope', '$http', '$location', 'Global',
-    function($scope, $rootScope, $http, $location, Global) {
+  .controller('LoginCtrl', ['$scope', '$rootScope', '$http', '$location', 'Global','$modal',
+    function($scope, $rootScope, $http, $location, Global,$modal) {
       // This object will be filled by the form
       $scope.user = {};
       $scope.global = Global;
@@ -41,6 +41,27 @@ angular.module('mean.users')
         $scope.input.placeholder = $scope.input.placeholder === 'Password' ? 'Visible Password' : 'Password';
         $scope.input.iconClass = $scope.input.iconClass === 'icon_hide_password' ? '' : 'icon_hide_password';
         $scope.input.tooltipText = $scope.input.tooltipText === 'Show password' ? 'Hide password' : 'Show password';
+      };
+
+     // $scope.items = ['item1', 'item2', 'item3'];
+
+      $scope.launchModal = function(){
+        var modalInstance = $modal.open({
+          templateUrl: 'users/views/dialogs/forgot-password.html',
+          controller: 'ForgotPasswordCtrl',
+          size: 'sm',
+          resolve: {
+            //items: function () {
+            //  return $scope.items;
+            //}
+          }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+          $scope.selected = selectedItem;
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
       };
 
       // Register the login() function

@@ -24,7 +24,7 @@ Theme.register(function(app, auth, database) {
 //    menu: 'main'
 //  });
 
-  Theme.aggregateAsset('css', 'loginForms.css');
+  //Theme.aggregateAsset('css', 'loginForms.css');
   Theme.aggregateAsset('css', 'theme.css');
 
   /**
