@@ -32,7 +32,18 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
         authenticated: !! $rootScope.user,
         user: $rootScope.user
       };
-    });
+    })
+
+    $scope.alterLeftNav = function(){
+      var isNavClicked = $rootScope.isNavClicked;
+      console.log(isNavClicked);
+       if (isNavClicked != null && isNavClicked ==true) {
+         isNavClicked = false;
+       }else{
+         isNavClicked = true;
+       }
+        $rootScope.isNavClicked = isNavClicked;
+    }
 
   }
 ]);
