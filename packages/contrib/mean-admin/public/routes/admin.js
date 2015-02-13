@@ -22,13 +22,11 @@ angular.module('mean.mean-admin').config(['$stateProvider', '$urlRouterProvider'
                 templateUrl: '/dashboard/views/index.html',
                 controller:'DashboardController'
             }).state('speciality',{
-                url:'admin/speciality',
+                url:'/admin/speciality',
                 templateUrl:'mean-admin/views/speciality.html',
-                controller:'SpecialityController'
             }).state('bu',{
-                url:'admin/bu',
+                url:'/admin/bu',
                 templateUrl:'mean-admin/views/bu.html',
-                controller:'BUController'
             });
     }
 ]).config(['ngClipProvider',

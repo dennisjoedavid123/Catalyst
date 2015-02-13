@@ -47,4 +47,12 @@ module.exports = function(Admin, app, auth, database) {
     app.param('productId', products.product);
 
 
+    var speciality=require('../controllers/speciality');
+    app.get('/admin/speciality',auth.requiresAdmin,speciality.all);
+    app.post('/admin/speciality',auth.requiresAdmin,speciality.create);
+    app.put('/admin/speciality/:specialityId', auth.requiresAdmin, speciality.update);
+    app.delete('/admin/speciality/:specialityId', auth.requiresAdmin, speciality.destroy);
+
+    app.param('specialityId',speciality.speciality);
+
 };

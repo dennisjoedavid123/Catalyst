@@ -1,5 +1,32 @@
-
-
 <section data-ng-controller="SpecialityController">
-	<h2 data-ng-repeat='fields in specialitySchema'>{{fields.name}} speciality is: {{fields.speciality}} </h2>
+
+<form id="speciality-add-form" class="row-fluid form-inline" name="addSpecialityForm" data-ng-submit="add()">
+        <div class="">
+            <span data-ng-repeat="field in specialitySchema">
+                <input data-ng-if="(field['type'] == 'text')" type="{{field['type']}}" class="span2" data-ng-model="spec[field['schemaKey']]" placeholder="{{field['title']}}" id="speciality-add-title" />
+            </span>
+            <input type="submit" class="btn span1" value="Add" />
+        </div>
+    </form>
+<div class="loader" data-ng-init="init()">
+
+</div>
+<table class="table table-striped table-bordered table-hover editable-table" data-ng-show="spec.length">
+	<tr>
+		<th>Speciality</th>
+	</tr>
+	<tr data-ng-repeat="speciality in spec">
+            <td data-ng-show="edit">
+                <button class="glyphicon glyphicon-trash" data-ng-click="remove(speciality)" value="del">
+                    <i class="icon-trash icon-white"></i>
+                </button>
+            </td>
+            <td class="table-editable-cell" data-ng-repeat="field in specialitySchema" data-ng-if="field.inTable">
+                <span data-ng-if="(field['type'] == 'text')" class="editable-span" data-ng-editable="update(speciality)" data-ng-editable-model="speciality[field['schemaKey']]"></span>
+                <span data-ng-click="beforeSelect(field['schemaKey'], speciality)" data-ng-if="(field['type'] == 'select')" class="editable-span" data-ng-editable-select="update(speciality, field['schemaKey'])" data-ng-editable-select-model="speicality[field['schemaKey']]" data-ng-editable-select-options="field['options']">
+                </span>
+            </td>
+        </tr>
+</table>
+
 </section>

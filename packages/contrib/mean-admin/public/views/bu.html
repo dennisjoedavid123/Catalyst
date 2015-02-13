@@ -1,1 +1,11 @@
-welcome to signifiq
+<section data-ng-controller="BUController">
+
+<form id="bu-add-form" class="row-fluid form-inline" name="addBUForm" data-ng-submit="add()">
+        <div class="">
+            <span data-ng-repeat="field in buSchema">
+                <input data-ng-if="(field['type'] == 'text')" type="{{field['type']}}" class="span2" data-ng-model="bu[field['schemaKey']]" placeholder="{{field['title']}}" id="bu-add-title" />
+            </span>
+            <input type="submit" class="btn span1" value="Add" />
+        </div>
+    </form>
+</section>
