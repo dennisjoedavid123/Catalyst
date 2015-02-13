@@ -7,7 +7,7 @@ module.exports = {
     debug: false
   },
   app: {
-    name: 'MEAN - FullStack JS - Development'
+    name: 'Catalyst: Ignite Your Sales'
   },
   facebook: {
     clientID: 'DEFAULT_APP_ID',
