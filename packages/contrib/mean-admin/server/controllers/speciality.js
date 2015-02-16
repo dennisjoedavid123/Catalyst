@@ -52,7 +52,7 @@ exports.create = function(req, res, next) {
 exports.all = function(req, res) {
     console.log('all method called..');
     var speciality = new Speciality(req.body);
-    Speciality.find({},function(error,speciality){
+    Speciality.find({delFlag:1},function(error,speciality){
         console.log(speciality);
         if(error){
             res.render('error', {
@@ -84,8 +84,9 @@ exports.speciality = function(req, res, next, id) {
 
 exports.update = function(req, res) {
     var speciality = req.profile;
+    console.log("before extends speciality in update="+speciality);
     speciality = _.extend(speciality, req.body);
-
+    console.log("speciality in update="+speciality);
     speciality.save(function(err) {
         res.jsonp(speciality);
     });
@@ -93,14 +94,22 @@ exports.update = function(req, res) {
 
 exports.destroy = function(req, res) {
      var speciality = req.profile;
-    console.log("the speciality is "+speciality);
-    speciality.remove(function(err) {
+    console.log("ID of speciality="+speciality);
+    speciality.delFlag=0;
+    console.log("after change="+speciality);
+    speciality.save(function(err) {
+        res.jsonp(speciality);
+    });
+    /*speciality.update({$where:this._id==speciality._id},{$set:{delFlag:0}},function(err) {
         if (err) {
+            console.log("ERROR="+err);
             res.render('error', {
                 status: 500
             });
         } else {
+
+            console.log('updated delFlag');
             res.jsonp(speciality);
         }
-    });
+    });*/
 };

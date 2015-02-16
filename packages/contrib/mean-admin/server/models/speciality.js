@@ -20,6 +20,11 @@ var SpecialitySchema=new Schema({
   	type:String,
   	required:false,
   	default: ['somewhere local'] 
+  },
+  delFlag:{
+    type:Number,
+    required:true,
+    default:1
   }
 });
 

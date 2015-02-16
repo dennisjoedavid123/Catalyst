@@ -31,7 +31,8 @@ angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 
         	if(!$scope.spec)$scope.spec=[];
         	var speciality=new Speciality({
                 speciality:$scope.spec.speciality,
-                image:$scope.spec.image
+                image:$scope.spec.image,
+                delFlag:1
             });
             speciality.$save(function(response){
                 $scope.spec.push(response);
@@ -40,10 +41,10 @@ angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 
         }
 
         $scope.remove = function(speciality) {
-           console.log('Inside the Remove function of speciality');
+           console.log('Inside the Remove function of speciality'+speciality);
 
             for (var i in $scope.spec) {
-                if ($scope.speck[i] === speciality) {
+                if ($scope.spec[i] === speciality) {
                     $scope.spec.splice(i, 1);
                 }
             }
