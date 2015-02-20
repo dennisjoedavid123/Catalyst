@@ -5,6 +5,9 @@ angular.module('mean.mean-admin').factory("Speciality", ['$resource',
         }, {
             update: {
                 method: 'PUT'
+            },
+            undoupdate:{
+            	method : 'PUT'
             }
         });
     }

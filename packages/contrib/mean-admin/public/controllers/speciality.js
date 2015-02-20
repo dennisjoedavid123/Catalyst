@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 'Global', 'Menus', '$rootScope', '$http', 'Speciality',
-    function($scope, Global, Menus, $rootScope, $http, Speciality) {
+    function($scope, Global, Menus, $rootScope, $http, Speciality,growlNotifications) {
         $scope.global = Global;
         $scope.specialitySchema = [{
         	title:'Speciality',
@@ -57,6 +57,7 @@ angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 
                speciality.$update();
         };
 
+        
         $scope.beforeSelect = function(specialityField, speciality) {
             // if (productField === 'roles') {
             //     //user.tmpRoles = product.roles;

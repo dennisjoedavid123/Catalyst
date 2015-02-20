@@ -52,6 +52,7 @@ module.exports = function(Admin, app, auth, database) {
     app.post('/admin/speciality',auth.requiresAdmin,speciality.create);
     app.put('/admin/speciality/:specialityId', auth.requiresAdmin, speciality.update);
     app.delete('/admin/speciality/:specialityId', auth.requiresAdmin, speciality.destroy);
+    app.put('/admin/speciality/:specialityId',auth.requiresAdmin,speciality.undoupdate);
 
     app.param('specialityId',speciality.speciality);
 

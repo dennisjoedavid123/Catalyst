@@ -92,6 +92,16 @@ exports.update = function(req, res) {
     });
 };
 
+exports.undoupdate =function(req,res){
+    var speciality = req.profile;
+    console.log("ID of speciality="+speciality);
+    speciality.delFlag=1;
+    console.log("after change="+speciality);
+    speciality.save(function(err) {
+        res.jsonp(speciality);
+    });
+}
+
 exports.destroy = function(req, res) {
      var speciality = req.profile;
     console.log("ID of speciality="+speciality);

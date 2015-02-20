@@ -1,4 +1,6 @@
+
 <section data-ng-controller="SpecialityController">
+
 
 <form id="speciality-add-form" class="row-fluid form-inline" name="addSpecialityForm" data-ng-submit="add()">
         <div class="">
@@ -24,9 +26,10 @@
 
 	<tr data-ng-repeat="speciality in spec">
             <td data-ng-show="edit">
-                <button class="glyphicon glyphicon-trash" data-ng-click="remove(speciality)" value="del">
+                <button class="glyphicon glyphicon-trash" data-ng-click="remove(speciality)" ng-notification="speciality" value="del">
                     <i class="icon-trash icon-white"></i>
                 </button>
+                
             </td>
             <td class="table-editable-cell" data-ng-repeat="field in specialitySchema" data-ng-if="field.inTable">
                 <span data-ng-if="(field['type'] == 'text')" class="editable-span" data-ng-editable="update(speciality)" data-ng-editable-model="speciality[field['schemaKey']]"></span>
@@ -35,5 +38,8 @@
             </td>
         </tr>
 </table>
+<!-- <button ng-notification="">Click Me</button> -->
+ 
 
 </section>
+
