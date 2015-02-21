@@ -87,20 +87,13 @@ exports.update = function(req, res) {
     console.log("before extends speciality in update="+speciality);
     speciality = _.extend(speciality, req.body);
     console.log("speciality in update="+speciality);
+    speciality.delFlag=1;
+    console.log('speciality is called.... and undo is done..');
     speciality.save(function(err) {
         res.jsonp(speciality);
     });
 };
 
-exports.undoupdate =function(req,res){
-    var speciality = req.profile;
-    console.log("ID of speciality="+speciality);
-    speciality.delFlag=1;
-    console.log("after change="+speciality);
-    speciality.save(function(err) {
-        res.jsonp(speciality);
-    });
-}
 
 exports.destroy = function(req, res) {
      var speciality = req.profile;

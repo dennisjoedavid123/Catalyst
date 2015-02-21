@@ -49,10 +49,11 @@ angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 
                 }
             }
             console.log("the speciality is "+speciality);
-
+            $scope.dirtyObject = speciality;
             speciality.$remove();
         };
 
+       
         $scope.update = function(speciality, specialityField) {
                speciality.$update();
         };

@@ -1,7 +1,7 @@
 
 .mid{
 	padding: 10px;
-	color: #ffffff;
+	color: #000000;
 	font-size: 15px;
 }
 .mid p span{
@@ -42,7 +42,7 @@
 }
 .notification {
     background-color: #f7d358;
-    bottom: 16px;
+    bottom: 50px;
     display: none;
     height: 43px;
     left: 540px;
