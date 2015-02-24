@@ -55,4 +55,10 @@ module.exports = function(Admin, app, auth, database) {
 
     app.param('specialityId',speciality.speciality);
 
+    var bu = require('../controllers/bu');
+    app.get('/admin/bu',auth.requiresAdmin,bu.all);
+    app.post('/admin/bu',auth.requiresAdmin,bu.create);
+    app.put('/admin/bu/:buId', auth.requiresAdmin, bu.update);
+    app.delete('/admin/bu/:buId', auth.requiresAdmin, bu.destroy);
+    app.param('buId',bu.bu);
 };

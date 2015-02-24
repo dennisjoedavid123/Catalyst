@@ -28,7 +28,9 @@ Admin.register(function(app, auth, database) {
     Admin.aggregateAsset('js', 'products.js');
     Admin.aggregateAsset('js', 'speciality.js');
     Admin.aggregateAsset('css','../lib/css/main.css');
-    Admin.aggregateAsset('js','notification.js')
+    Admin.aggregateAsset('js','notification.js');
+    
+    Admin.aggregateAsset('js','bu.js');
 
     Admin.aggregateAsset('js', '../lib/ng-clip/src/ngClip.js', {
         absolute: false,

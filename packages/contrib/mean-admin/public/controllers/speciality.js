@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 'Global', 'Menus', '$rootScope', '$http', 'Speciality',
-    function($scope, Global, Menus, $rootScope, $http, Speciality,growlNotifications) {
+    function($scope, Global, Menus, $rootScope, $http, Speciality) {
         $scope.global = Global;
         $scope.specialitySchema = [{
         	title:'Speciality',
@@ -27,7 +27,6 @@ angular.module('mean.mean-admin').controller('SpecialityController', ['$scope', 
 
         $scope.add=function(){
         	console.log('Inside add function'+$scope.spec.speciality);
-
         	if(!$scope.spec)$scope.spec=[];
         	var speciality=new Speciality({
                 speciality:$scope.spec.speciality,

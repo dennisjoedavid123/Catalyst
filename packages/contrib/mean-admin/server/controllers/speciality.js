@@ -96,23 +96,12 @@ exports.update = function(req, res) {
 
 
 exports.destroy = function(req, res) {
-     var speciality = req.profile;
+    var speciality = req.profile;
     console.log("ID of speciality="+speciality);
     speciality.delFlag=0;
     console.log("after change="+speciality);
     speciality.save(function(err) {
         res.jsonp(speciality);
     });
-    /*speciality.update({$where:this._id==speciality._id},{$set:{delFlag:0}},function(err) {
-        if (err) {
-            console.log("ERROR="+err);
-            res.render('error', {
-                status: 500
-            });
-        } else {
-
-            console.log('updated delFlag');
-            res.jsonp(speciality);
-        }
-    });*/
+    
 };
