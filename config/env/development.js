@@ -7,7 +7,11 @@ module.exports = {
     debug: false
   },
   app: {
+<<<<<<< HEAD
     name: 'Catalyst'
+=======
+    name: 'Catalyst: Ignite Your Sales'
+>>>>>>> origin/dennis
   },
   facebook: {
     clientID: 'DEFAULT_APP_ID',
