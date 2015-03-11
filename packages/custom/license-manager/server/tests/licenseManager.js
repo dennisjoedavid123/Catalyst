@@ -16,6 +16,7 @@ function getRandomString(len) {
 var expect = require('expect.js'),
     mongoose = require('mongoose'),
     logger = require('../utils/logger.js'),
+    licenseManager = require('../controllers/licenseManager'),
     License = mongoose.model('License');
 /**
  * Globals
@@ -79,7 +80,7 @@ describe('<Unit Test>', function() {
 
             done();
         });
-        describe('Method create Authorized User License',function(){
+        describe.skip('Method create Authorized User License',function(){
            it('should be creating the Authorized User License Entry in License Model',function(done){
               logger.utLogger.debug('Test Authorized User ',authorizedUser);
               var userLicense  = new License(authorizedUser);
@@ -104,20 +105,20 @@ describe('<Unit Test>', function() {
         });
         describe.skip('Method create Authenticated User License ',function(){
            it('should be creating the Authenticated User Entry in License Model ',function(){
-                var authenticatedUser = new License(authenticatedUser);
-                authenticatedUser.save(function(err){
+                var userLicense = new License(authenticatedUser);
+               userLicense.save(function(err){
                    if(err){
                     logger.utLogger.debug('Error while creating the authenticated user ',err);
                    }
                 });
                License.find({
                    username : authenticatedUser.username
-               },function (err,authenticatedUser){
+               },function (err,license){
                   if(err){
                       logger.utLogger.debug('Error while Finding the authenticated user ',err);
                   }else{
-                      logger.utLogger.debug('authenticatedUser',authenticatedUser);
-                      expect(authenticatedUser.length).to.equal(1);
+                      logger.utLogger.debug('authenticatedUser',license);
+                      expect(license.length).to.equal(1);
                   }
                });
            });
@@ -127,19 +128,27 @@ describe('<Unit Test>', function() {
               logger.utLogger.debug('Executing the Method populate parentLicense for User License from Manager License');
               License.find({
                       username : authorizedUser.username
-                  }, function(err,authorizedUser){
+                  }, function(err,license){
                     if(err){
                         logger.utLogger.debug(err);
                     }else{
-                        logger.utLogger.debug(authorizedUser);
-                        expect(authorizedUser.length).to.equal(1);
-                        logger.utLogger.debug('authorizedUser',authorizedUser);
-                        if(authorizedUser){
-                            var parentId = authorizedUser._id;
-                            authenticatedUser.parentLicense = parentId;
+                        logger.utLogger.debug(license);
+                        logger.utLogger.debug('authorizedUser',license);
+                        if(license){
+                            var parentId = license[0]._id;
+                            logger.utLogger.debug('Parent Id ',license[0]._id);
+                            authenticatedUser.parentLicense = license[0]._id;
+                            logger.utLogger.debug('Authenticated User ',authenticatedUser);
+                            expect(license.length).to.equal(1);
                         }
                     }
                   });
+           });
+        });
+        describe.skip('Method to validate Module license for the user',function(){
+           it('should validate the module license for the user ', function (done) {
+               var isLicensed = licenseManager.validateModuleLicense_1(authorizedUser.username,authorizedUser.modules[0]);
+               expect(isLicensed).to.equal(true);
            });
         });
         describe.skip('Method Get one fine Licensed User ', function() {
