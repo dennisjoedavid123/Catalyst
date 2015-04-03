@@ -1,0 +1,54 @@
+
+.mid{
+	padding: 10px;
+	color: #000000;
+	font-size: 15px;
+}
+.mid p span{
+	padding-left: 10px;
+	font-weight: bold;
+}
+.win8-notif-body{
+	position: absolute;
+	z-index: 3;
+	top:30%;
+	margin: 0px 0px 0px 0px;
+	text-align: center;
+	min-height: 100px;
+	/*padding: 40px 20% 40px 20%;*/
+	font-family: sans-serif;
+    width:500px;
+
+}
+.win8-notif-body h3{
+	font-size: 1.5em;
+}
+
+
+.win8-notifiy-body p{
+	font-size: 1em;
+}
+
+.win8-notif-button {
+    cursor: pointer;
+    display: block;
+    float: right;
+    font-weight: bold;
+    margin-bottom: 2%;
+    margin-left: 0;
+    margin-top: 1%;
+    min-width: 8%;
+    padding: 0;
+}
+.notification {
+    background-color: #f7d358;
+    bottom: 50px;
+    display: none;
+    height: 43px;
+    left: 540px;
+    position: absolute;
+    width: 280px;
+}
+
+
+

@@ -1,0 +1,52 @@
+
+<section data-ng-controller="SpecialityController">
+
+
+<form id="speciality-add-form" class="row-fluid form-inline" name="addSpecialityForm" data-ng-submit="add()">
+        <div class="">
+            <span data-ng-repeat="field in specialitySchema">
+                <input data-ng-if="(field['type'] == 'text')" type="{{field['type']}}" class="span2" data-ng-model="spec[field['schemaKey']]" placeholder="{{field['title']}}" id="speciality-add-title" />
+            </span>
+            <input type="submit" class="btn span1" value="Add" />
+        </div>
+    </form>
+ <div class="loader" data-ng-init="init()" data-ng-hide="spec.length"></div>
+    <div class="actions-bar" data-ng-show="spec.length">
+        <input type="button" class="btn btn-danger" data-ng-hide="edit" data-ng-click="edit=!edit" value="Edit">
+        <input type="button" class="btn btn-primary" data-ng-show="edit" data-ng-click="edit=!edit" value="Done">
+    </div>
+<table class="table table-striped table-bordered table-hover editable-table" data-ng-show="spec.length">
+    <tr>
+            <th data-ng-show="edit">
+                Edit
+            </th>
+            <th data-ng-repeat="field in specialitySchema" data-ng-if="field.inTable">{{field.title}}</th>
+    </tr>
+	<tr data-ng-repeat="speciality in spec">
+            <div id="notification" class="notification">
+                 <div>
+                    <!-- <div style="float: right;" class="win8-notif-button" id="cancelnotification">X </div>-->
+                    <div class="mid">
+                            <p>Element has been deleted. <input type="button" data-ng-click="update(dirtyObject);init();"  id='undo' value="Undo" class="btn btn-link"></p>
+                    </div>
+                </div>
+            </div>
+            <td data-ng-show="edit">
+                <button class="glyphicon glyphicon-trash" data-ng-click="remove(speciality)" ng-notification="speciality" value="del">
+                    <i class="icon-trash icon-white"></i>
+                </button>
+                
+            </td>
+            <td class="table-editable-cell" data-ng-repeat="field in specialitySchema" data-ng-if="field.inTable">
+                <span data-ng-if="(field['type'] == 'text')" class="editable-span" data-ng-editable="update(speciality)" data-ng-editable-model="speciality[field['schemaKey']]"></span>
+                <span data-ng-click="beforeSelect(field['schemaKey'], speciality)" data-ng-if="(field['type'] == 'select')" class="editable-span" data-ng-editable-select="update(speciality, field['schemaKey'])" data-ng-editable-select-model="speicality[field['schemaKey']]" data-ng-editable-select-options="field['options']">
+                </span>
+            </td>
+        </tr>
+</table>
+<!-- <button ng-notification="">Click Me</button> -->
+ </div>
+    
+
+</section>
+

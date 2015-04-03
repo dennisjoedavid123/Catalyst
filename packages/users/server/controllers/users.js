@@ -25,7 +25,7 @@ exports.signin = function(req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/');
   }
-  res.redirect('#!/login');
+  res.redirect('#!/auth/login');
 };
 
 /**
@@ -33,7 +33,7 @@ exports.signin = function(req, res) {
  */
 exports.signout = function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.redirect('/#!/auth/login');
 };
 
 /**
