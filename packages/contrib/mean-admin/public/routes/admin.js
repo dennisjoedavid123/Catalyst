@@ -27,6 +27,13 @@ angular.module('mean.mean-admin').config(['$stateProvider', '$urlRouterProvider'
             }).state('bu',{
                 url:'/admin/bu',
                 templateUrl:'mean-admin/views/bu.html',
+            }).state('visualaid',{
+                url:'/admin/visualaid',
+                templateUrl:'mean-admin/views/visualaid.html',
+            }).state('studio',{
+                url:'studio/example',
+                templateUrl: '/studio/views/index.html',
+                controller:'StudioController'
             });
     }
 ]).config(['ngClipProvider',

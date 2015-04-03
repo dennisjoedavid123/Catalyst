@@ -76,7 +76,3 @@ angular.module('mean.mean-admin').directive('ngEditableSelect', function() {
         }
     };
 });
-
-
-
-

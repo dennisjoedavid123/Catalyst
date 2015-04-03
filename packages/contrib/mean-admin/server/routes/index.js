@@ -45,9 +45,8 @@ module.exports = function(Admin, app, auth, database) {
 
     // sucker that killed me for 2 weeks - to call the param
     app.param('productId', products.product);
-
-
-    var speciality=require('../controllers/speciality');
+	
+	var speciality=require('../controllers/speciality');
     app.get('/admin/speciality',auth.requiresAdmin,speciality.all);
     app.post('/admin/speciality',auth.requiresAdmin,speciality.create);
     app.put('/admin/speciality/:specialityId', auth.requiresAdmin, speciality.update);
@@ -61,4 +60,5 @@ module.exports = function(Admin, app, auth, database) {
     app.put('/admin/bu/:buId', auth.requiresAdmin, bu.update);
     app.delete('/admin/bu/:buId', auth.requiresAdmin, bu.destroy);
     app.param('buId',bu.bu);
+
 };

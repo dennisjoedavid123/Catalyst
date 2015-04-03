@@ -11,8 +11,11 @@ var MeanUser = new Module('users');
  * All MEAN packages require registration
  * Dependency injection is used to define required modules
  */
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 68139329ee6960c6eec9e38b9adedc7bae4bc929
 MeanUser.register(function(app, auth, passport, database) {
 
   //We enable routing. By default the Package Object is passed to the routes

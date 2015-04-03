@@ -45,12 +45,10 @@ angular.module('mean.mean-admin').controller('ProductController', ['$scope', 'Gl
         };
 
         $scope.remove = function(product) {
-           console.log('Inside the Remove function of Product.js='+product);
+           console.log('Inside the Remove function of Product.js');
 
             for (var i in $scope.products) {
-                console.log("product="+$scope.products[i]);
                 if ($scope.products[i] === product) {
-
                     $scope.products.splice(i, 1);
                 }
             }

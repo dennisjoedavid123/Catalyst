@@ -521,7 +521,12 @@
     this.bindZoomButtons();
     
     if(params.pins) {
+<<<<<<< HEAD
+      /*if(params.pinMode) 2569++3
+      {
+=======
       /*if(params.pinMode) {
+>>>>>>> 68139329ee6960c6eec9e38b9adedc7bae4bc929
           if(params.pinMode != "id" && params.pinMode != "content") {
               params.pinMode = "content";
           }

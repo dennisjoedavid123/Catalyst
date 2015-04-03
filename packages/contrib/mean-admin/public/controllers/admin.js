@@ -22,7 +22,14 @@ angular.module('mean.mean-admin').controller('AdminController', ['$scope', 'Glob
                 'title': 'SETTINGS',
                 'link': 'settings',
                 'icon': 'fa fa-gears'
+            } ,
+            {
+                'roles': ['admin'],
+                'title': 'STUDIO',
+                'link': 'studio',
+                'icon': 'fa fa-fa-film'
             }
+
         ];
 
         var manageAdminMenu = [ {
@@ -40,7 +47,7 @@ angular.module('mean.mean-admin').controller('AdminController', ['$scope', 'Glob
             'title': 'PRODUCTS',
             'link': 'products',
             'icon': 'fa fa-flask'
-        },{
+        }        ,{
             'roles': ['admin'],
             'title': 'SPECIALITY',
             'link': 'speciality',
@@ -49,6 +56,11 @@ angular.module('mean.mean-admin').controller('AdminController', ['$scope', 'Glob
             'roles': ['admin'],
             'title': 'BU',
             'link': 'bu',
+            'icon': 'fa fa-flask'
+        },{
+            'roles': ['admin'],
+            'title': 'Visual AID',
+            'link': 'visualaid',
             'icon': 'fa fa-flask'
         }
         ];
