@@ -7,7 +7,8 @@ angular.module('mean.license-manager').controller('LicenseManagerController', ['
           name: 'license-manager'
       };
       // list of licenses
-      $scope.licenses = {};
+      $scope.licenses =  {};
+
 
 
       $scope.handleUserMessage = function () {
@@ -57,7 +58,6 @@ angular.module('mean.license-manager').controller('LicenseManagerController', ['
       $scope.getUserRole = function () {
 
       };
-
       $scope.manager_id = '';
 
       $scope.getManagerLicenseId = function () {
@@ -95,11 +95,41 @@ angular.module('mean.license-manager').controller('LicenseManagerController', ['
 
       };
       $scope.createLicense = function () {
-          console.log($scope.user);
-          console.log('VEL', $scope.user.startDate);
-          console.log('VEL  End date ', $scope.user.startDate);
           $scope.user.startDate = '11/11/1111';
           $scope.user.endDate = '11/11/2222';
+          $scope.user.modules = [
+              {
+                moduleName : 'mean-admin',
+                listOfAPIs : [
+                    {
+                        apiName : 'getUsers',
+                        apiURL : '/license-manager/getUsers'
+                    },
+                    {
+                        apiNaame : 'updateUser',
+                        apiURL  : '/license-manager/getUsers'
+                    }
+                ],
+                moduleDesc : 'Mean Admin Module'
+              },
+              {
+                  moduleName : 'mili-app',
+                  listOfAPIs : [
+                      {
+                          apiName : 'getData',
+                          apiURL : '/mili-app/getData'
+                      },
+                      {
+                          apiNaame : 'updateData',
+                          apiURL  : '/mili-app/updateData'
+                      }
+                  ],
+                  moduleDesc : 'MEAN Mili App'
+              }
+          ];
+          $scope.user.licenseType = 'API';
+          $scope.user.noOfLicense = '10';
+          console.log($scope.user);
           var data = LicenseManagerFactory.createLicense($scope.user);
           if (data.status) {
               var response = data.response;
@@ -171,6 +201,14 @@ angular.module('mean.license-manager').controller('LicenseManagerController', ['
           console.log('In validateModuleLicense User Name = ' + userName + ' Module Name ' + moduleName);
           var data = LicenseManagerFactory.validateModuleLicense(userName, moduleName);
           console.log('License validation Result ' + data);
+      };
+
+      $scope.getSuperAdminUser = function(){
+
+      };
+
+      $scope.getAllUserLicenses = function(){
+          console.log('VEL User',$scope);
       };
   }
 ]);

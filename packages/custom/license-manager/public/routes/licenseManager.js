@@ -15,6 +15,12 @@ angular.module('mean.license-manager').config(['$stateProvider',
             url: '/licenseManager/licenseDetails',
             templateUrl: 'license-manager/views/LicenseDetails.html'
         }
+    ).state('License Dashboard',
+        {
+            url: '/licenseManager/licenseDashboard',
+            templateUrl: 'license-manager/views/licenseDashboard.html'
+        }
+
     );
   }
 ]);

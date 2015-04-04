@@ -1,9 +1,9 @@
 'use strict';
 
 var paths = {
-  js: ['*.js', 'test/**/*.js', '!test/coverage/**', '!bower_components/**', 'packages/**/*.js', '!packages/**/node_modules/**', '!packages/contrib/**/*.js', '!packages/contrib/**/node_modules/**'],
-  html: ['packages/**/public/**/views/**', 'packages/**/server/views/**'],
-  css: ['!bower_components/**', 'packages/**/public/**/css/*.css', '!packages/contrib/**/public/**/css/*.css']
+  //js: ['*.js', 'test/**/*.js', '!test/coverage/**', '!bower_components/**', 'packages/**/*.js', '!packages/**/node_modules/**', '!packages/contrib/**/*.js', '!packages/contrib/**/node_modules/**'],
+  html: ['packages/**/public/**/views/**', 'packages/**/server/views/**']
+  //css: ['!bower_components/**', 'packages/**/public/**/css/*.css', '!packages/contrib/**/public/**/css/*.css']
 };
 
 module.exports = function(grunt) {
@@ -11,7 +11,6 @@ module.exports = function(grunt) {
   if (process.env.NODE_ENV !== 'production') {
     require('time-grunt')(grunt);
   }
-
   // Project Configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -81,7 +80,7 @@ module.exports = function(grunt) {
       }
     },
     concurrent: {
-      tasks: ['nodemon', 'watch'],
+      tasks: ['nodemon'],
       options: {
         logConcurrentOutput: true
       }
@@ -121,9 +120,9 @@ module.exports = function(grunt) {
   }
 
   //Test task.
-  grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+  //grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
 
   // For Heroku users only.
   // Docs: https://github.com/linnovate/mean/wiki/Deploying-on-Heroku
-  grunt.registerTask('heroku:production', ['cssmin', 'uglify']);
+  //grunt.registerTask('heroku:production', ['cssmin', 'uglify']);
 };

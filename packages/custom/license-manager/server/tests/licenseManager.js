@@ -1,7 +1,9 @@
 'use strict';
 /*jshint -W079 */
 var crypto = require('crypto');
-
+var request = require('supertest'),
+    express = require('express');
+var app = express();
 /**
  * Create a random hex string of specific length and
  * @todo consider taking out to a common unit testing javascript helper
@@ -135,7 +137,6 @@ describe('<Unit Test>', function() {
                         logger.utLogger.debug(license);
                         logger.utLogger.debug('authorizedUser',license);
                         if(license){
-                            var parentId = license[0]._id;
                             logger.utLogger.debug('Parent Id ',license[0]._id);
                             authenticatedUser.parentLicense = license[0]._id;
                             logger.utLogger.debug('Authenticated User ',authenticatedUser);
@@ -145,11 +146,31 @@ describe('<Unit Test>', function() {
                   });
            });
         });
+
         describe.skip('Method to validate Module license for the user',function(){
            it('should validate the module license for the user ', function (done) {
                var isLicensed = licenseManager.validateModuleLicense_1(authorizedUser.username,authorizedUser.modules[0]);
                expect(isLicensed).to.equal(true);
            });
+        });
+
+        describe('Method to validate API license for the user',function(){
+            it('should validate the module license for the user ', function (done) {
+                request(app)
+                    .post('/licenseManager/validateAPILicense')
+                    .set('Accept', 'application/json')
+                    .send({url : 'http://localhost:3000'})
+                    .expect('Content-Type', 'json')
+                    .expect(200)
+                    .end(function(err, res){
+                        if (err) {
+                            return done(err);
+                        }else{
+                            console.log(res);
+                        }
+                        done();
+                    });
+            });
         });
         describe.skip('Method Get one fine Licensed User ', function() {
             it('should begin without the test user', function(done) {
@@ -166,6 +187,7 @@ describe('<Unit Test>', function() {
                 });
             });
         });
+
         after(function(done) {
 
             /** Clean up user objects

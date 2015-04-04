@@ -32,11 +32,12 @@ exports.create = function(req, res, next) {
         mobileNo : req.body.mobileNo,
         email : req.body.email,
         licenseType : req.body.licenseType,
-        authenticattionType : 'EMAIL',
+        authenticationType : 'EMAIL',
         licenseStatus : 'ACTIVE',
         userrole : req.body.userRole,
         noOfLicense : req.body.noOfLicense,
         parentLicense : req.body.parentLicense,
+        modules : req.body.modules,
         licenseKey:encrypted.toString()
     };
     /** decrypt */
@@ -273,9 +274,10 @@ exports.validateModuleLicense_1 =  function(username,modulename){
         if(!license){
             return 'false';
         }
-        if(err){
+
+       if(err){
             logger.logger.error('Error Occured while getting the License '+err);
-            return 'false';
+            return {isLicensed : 'false'};
         }else{
             logger.logger.debug('License Object in validateModuleLicense'+license);
             if(license){
@@ -289,9 +291,9 @@ exports.validateModuleLicense_1 =  function(username,modulename){
                     }
                 }
                 if(isLicesned){
-                    return 'true';
+                    return {isLicensed : 'true'};
                 }else{
-                    return 'false';
+                    return {isLicensed : 'false'};
                 }
             }
         }
@@ -345,5 +347,153 @@ exports.validateModuleLicense =  function(req,res){
            }
        }
     });
+};
 
+
+exports.validateAPILicenseByUserName =  function(req,res){
+    var username = req.body.username;
+    var modulename = req.body.modulename;
+    var apiName = req.body.apiName;
+    logger.logger.debug('UserName in validateModuleLicense'+username);
+    logger.logger.debug('Module Name in validateModuleLicense'+modulename);
+    logger.logger.debug('Module Name in validateModuleLicense'+apiName);
+    License.findOne({
+        username:username
+    }).exec(function(err,license){
+        if(!license){
+            res.status(400).json({
+                msg : 'Not able to check the License for this Module',
+                status : false
+            });
+        }
+        if(err){
+            logger.logger.error('Error Occured while getting the License '+err);
+            res.status(400).json({
+                msg : 'Not able to check the License for this Module',
+                status : false
+            });
+        }else{
+            logger.logger.debug('License Object in validateModuleLicense'+license);
+            if(license){
+                var licensedModules = license.modules;
+                logger.logger.debug('Array of Licensed modules '+licensedModules);
+                var isLicesned = false;
+                for(var i=0 ; i<licensedModules.length;i=i+1){
+                    logger.logger.debug('Module Name '+licensedModules[i]);
+
+                    if(modulename === licensedModules[i]){
+                        var listOfAPIs =  licensedModules[i].listOfAPIs;
+                        if(listOfAPIs){
+                            for(var j=0;j<listOfAPIs.length;j=j+1){
+                                if(apiName === listOfAPIs[j].apiName){
+                                    isLicesned = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                if(isLicesned){
+                    res.status(200).json({
+                        msg : 'This API is Licensed for this User',
+                        status : true
+                    });
+                }else{
+                    res.status(400).json({
+                        msg : 'This API is not Licensed for this User',
+                        status : false
+                    });
+                }
+            }
+        }
+    });
+
+};
+exports.validateAPILicense =  function(req,res){
+    logger.logger.debug('License key in validateAPILicense'+req.body.licenseKey);
+    logger.logger.debug('API Name in validateAPILicense'+req.body.apiName);
+    logger.logger.debug('Module Name in validateAPILicense'+req.body.moduleName);
+    var licenseKey = req.body.licenseKey;
+    var apiName = req.body.apiName;
+    var moduleName = req.body.moduleName;
+
+    License.findOne({
+        licenseKey:licenseKey
+    }).exec(function(err,license){
+        if(!license){
+            res.status(400).json({
+                msg : 'Not able to check the License for this Module',
+                status : false
+            });
+        }
+        if(err){
+            logger.logger.error('Error Occured while getting the License '+err);
+            res.status(400).json({
+                msg : 'Not able to check the License for this Module',
+                status : false
+            });
+        }else{
+            logger.logger.debug('License Object in validateModuleLicense'+license);
+            if(license){
+                var licensedModules = license.modules;
+                logger.logger.debug('Array of Licensed modules '+licensedModules);
+                var isLicesned = false;
+                for(var i=0 ; i<licensedModules.length;i=i+1){
+                    logger.logger.debug('Module Name '+licensedModules[i]);
+                    if(moduleName === licensedModules[i]){
+                        var listOfAPIs =  licensedModules[i].listOfAPIs;
+                        if(listOfAPIs){
+                            for(var j=0;j<listOfAPIs.length;j=j+1){
+                                if(apiName === listOfAPIs[j].apiName){
+                                    isLicesned = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                if(isLicesned){
+                    res.status(200).json({
+                        msg : 'This module is Licensed for this User',
+                        status : true
+                    });
+                }else{
+                    res.status(400).json({
+                        msg : 'This module is not Licensed for this User',
+                        status : false
+                    });
+                }
+            }
+        }
+    });
+
+};
+exports.getSuperAdminUser =  function(req,res){
+   License.findOne({
+        companyId :'0',
+        userrole : 'Super-Admin'
+    }).exec(function(err,license){
+        if(!license){
+            res.status(400).json({
+                msg : 'Not able to find the License for this Super Admin',
+                status : false
+            });
+        }
+
+        if(err){
+            logger.logger.error('Error Occured while getting Super Admin User '+err);
+            res.status(400).json({
+                msg : 'Not able to check the License for this Module',
+                status : false
+            });
+        }else{
+            logger.logger.debug('License Object of Super Admin'+license);
+            if(license){
+                res.status(200).json({
+                    msg : 'This module is Licensed for this User',
+                    status : true,
+                    data : license
+                });
+
+            }
+        }
+    });
 };

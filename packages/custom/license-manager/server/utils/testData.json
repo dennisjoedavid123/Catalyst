@@ -1,0 +1,185 @@
+{
+  "test_data " : [
+  {
+    "username" : "user_1",
+    "mobileNo" : 1234567890,
+    "email" : "test_1@gmail.com",
+    "licenseType" : "User",
+    "licenseStatus" : "ACTIVE",
+    "userrole" : "System-Admin",
+    "noOfLicense" : 10,
+    "licenseKey" : "U2FsdGVkX19Mcy3lXzSy2Jb+vQfmP+lFZJls5mSFhowAIg+StG4+ww6Xv8q+Tzx8jchIcLqPx+n713IUVBEMEWxRyOBRHZ/qqr9bTICg/wGVcrANWZc1227FCptHJd6LGZI2ffBrVyddf7LIp9QaYvHPlFYjDEodzyaTa7KL7xC9ao6Pa2AhGe6IYpukqDEVdQn0S+gmgdsAsgPE+QRbO5i3tEm0p+y0leppWp3juQS6CHHpiBw5tae4waB9MHktezxPZiAuhngKROzgtU5M6/F1GUMP3Mf9Zq8eFlUoma+kQCkk+nju9J27h/1lznomXuJ7MQjZ1Z/4P2bUnX3sTxyizLttnJSRrErYTTHnSmKYG1mrkUXt/X5X/QiVkbizdoiXpUH6BDqDFu7i438MF/x+yq/kJfgszPMexDUWvP7Esv0+pmj24vleWqYbM89HVX86dtHn2/+PJjWC1w0OhJOWKg+x4oc490ecVPGv+/cH/pHk7DVAKAjzMFdnuAq609o0gBlxKCHIxteycKxaIlPs8YMFHSpuQ2lnffFTK5q0c7/qp1PuEnfFoIwfGsRRjG0jKE/9jnJezTkD9Hi7PVlMVHzDELtTpcWC44Og8kqnIIwJSFOh926Rq32vxIvlB1uvYhCwjocdTONFhlAuwHmb/O3AG4PY9s39O9DuUD2GBufVd724zho1Px9ZnRhtfJ57FbVkld7B1XVpgsUPiuXJ111c6MOndWG4S/h/D7Qa7aN7a6raR/4NokVR0V0s2Trj9AtfGwUK3F3zUfB1tg==",
+    "modules" : [
+      {
+        "moduleDesc" : "Mean Admin Module",
+        "listOfAPIs" : [
+          {
+            "apiURL" : "/license-manager/getUsers",
+            "apiName" : "getUsers"
+          },
+          {
+            "apiURL" : "/license-manager/getUsers",
+            "apiNaame" : "updateUser"
+          }
+        ],
+        "moduleName" : "mean-admin"
+      },
+      {
+        "moduleDesc" : "MEAN Mili App",
+        "listOfAPIs" : [
+          {
+            "apiURL" : "/mili-app/getData",
+            "apiName" : "getData"
+          },
+          {
+            "apiURL" : "/mili-app/updateData",
+            "apiNaame" : "updateData"
+          }
+        ],
+        "moduleName" : "mili-app"
+      }
+    ],
+    "company" : {
+      "companyId" : 0,
+      "companyName" : "signifiq"
+    },
+    "authenticationType" : "EMAIL"
+  },
+    {
+      "username" : "user_2",
+      "mobileNo" : 2345678901,
+      "email" : "test_2@gmail.com",
+      "licenseType" : "User",
+      "licenseStatus" : "ACTIVE",
+      "userrole" : "System-Admin",
+      "noOfLicense" : 10,
+      "licenseKey" : "U2FsdGVkX19Mcy3lXzSy2Jb+vQfmP+lFZJls5mSFhowAIg+StG4+ww6Xv8q+Tzx8jchIcLqPx+n713IUVBEMEWxRyOBRHZ/qqr9bTICg/wGVcrANWZc1227FCptHJd6LGZI2ffBrVyddf7LIp9QaYvHPlFYjDEodzyaTa7KL7xC9ao6Pa2AhGe6IYpukqDEVdQn0S+gmgdsAsgPE+QRbO5i3tEm0p+y0leppWp3juQS6CHHpiBw5tae4waB9MHktezxPZiAuhngKROzgtU5M6/F1GUMP3Mf9Zq8eFlUoma+kQCkk+nju9J27h/1lznomXuJ7MQjZ1Z/4P2bUnX3sTxyizLttnJSRrErYTTHnSmKYG1mrkUXt/X5X/QiVkbizdoiXpUH6BDqDFu7i438MF/x+yq/kJfgszPMexDUWvP7Esv0+pmj24vleWqYbM89HVX86dtHn2/+PJjWC1w0OhJOWKg+x4oc490ecVPGv+/cH/pHk7DVAKAjzMFdnuAq609o0gBlxKCHIxteycKxaIlPs8YMFHSpuQ2lnffFTK5q0c7/qp1PuEnfFoIwfGsRRjG0jKE/9jnJezTkD9Hi7PVlMVHzDELtTpcWC44Og8kqnIIwJSFOh926Rq32vxIvlB1uvYhCwjocdTONFhlAuwHmb/O3AG4PY9s39O9DuUD2GBufVd724zho1Px9ZnRhtfJ57FbVkld7B1XVpgsUPiuXJ111c6MOndWG4S/h/D7Qa7aN7a6raR/4NokVR0V0s2Trj9AtfGwUK3F3zUfB1tg==",
+      "modules" : [
+        {
+          "moduleDesc" : "Mean Admin Module",
+          "listOfAPIs" : [
+            {
+              "apiURL" : "/license-manager/getUsers",
+              "apiName" : "getUsers"
+            },
+            {
+              "apiURL" : "/license-manager/getUsers",
+              "apiNaame" : "updateUser"
+            }
+          ],
+          "moduleName" : "mean-admin"
+        },
+        {
+          "moduleDesc" : "MEAN Mili App",
+          "listOfAPIs" : [
+            {
+              "apiURL" : "/mili-app/getData",
+              "apiName" : "getData"
+            },
+            {
+              "apiURL" : "/mili-app/updateData",
+              "apiNaame" : "updateData"
+            }
+          ],
+          "moduleName" : "mili-app"
+        }
+      ],
+      "company" : {
+        "companyId" : 1,
+        "companyName" : "abc"
+      },
+      "authenticationType" : "EMAIL"
+    },
+    {
+      "username" : "user_3",
+      "mobileNo" : 3456789012,
+      "email" : "test_3@gmail.com",
+      "licenseType" : "User",
+      "licenseStatus" : "ACTIVE",
+      "userrole" : "System-Admin",
+      "noOfLicense" : 10,
+      "licenseKey" : "U2FsdGVkX19Mcy3lXzSy2Jb+vQfmP+lFZJls5mSFhowAIg+StG4+ww6Xv8q+Tzx8jchIcLqPx+n713IUVBEMEWxRyOBRHZ/qqr9bTICg/wGVcrANWZc1227FCptHJd6LGZI2ffBrVyddf7LIp9QaYvHPlFYjDEodzyaTa7KL7xC9ao6Pa2AhGe6IYpukqDEVdQn0S+gmgdsAsgPE+QRbO5i3tEm0p+y0leppWp3juQS6CHHpiBw5tae4waB9MHktezxPZiAuhngKROzgtU5M6/F1GUMP3Mf9Zq8eFlUoma+kQCkk+nju9J27h/1lznomXuJ7MQjZ1Z/4P2bUnX3sTxyizLttnJSRrErYTTHnSmKYG1mrkUXt/X5X/QiVkbizdoiXpUH6BDqDFu7i438MF/x+yq/kJfgszPMexDUWvP7Esv0+pmj24vleWqYbM89HVX86dtHn2/+PJjWC1w0OhJOWKg+x4oc490ecVPGv+/cH/pHk7DVAKAjzMFdnuAq609o0gBlxKCHIxteycKxaIlPs8YMFHSpuQ2lnffFTK5q0c7/qp1PuEnfFoIwfGsRRjG0jKE/9jnJezTkD9Hi7PVlMVHzDELtTpcWC44Og8kqnIIwJSFOh926Rq32vxIvlB1uvYhCwjocdTONFhlAuwHmb/O3AG4PY9s39O9DuUD2GBufVd724zho1Px9ZnRhtfJ57FbVkld7B1XVpgsUPiuXJ111c6MOndWG4S/h/D7Qa7aN7a6raR/4NokVR0V0s2Trj9AtfGwUK3F3zUfB1tg==",
+      "modules" : [
+        {
+          "moduleDesc" : "Mean Admin Module",
+          "listOfAPIs" : [
+            {
+              "apiURL" : "/license-manager/getUsers",
+              "apiName" : "getUsers"
+            },
+            {
+              "apiURL" : "/license-manager/getUsers",
+              "apiNaame" : "updateUser"
+            }
+          ],
+          "moduleName" : "mean-admin"
+        },
+        {
+          "moduleDesc" : "MEAN Mili App",
+          "listOfAPIs" : [
+            {
+              "apiURL" : "/mili-app/getData",
+              "apiName" : "getData"
+            },
+            {
+              "apiURL" : "/mili-app/updateData",
+              "apiNaame" : "updateData"
+            }
+          ],
+          "moduleName" : "mili-app"
+        }
+      ],
+      "company" : {
+        "companyId" : 1,
+        "companyName" : "abc"
+      },
+      "authenticationType" : "EMAIL"
+    },
+    {
+      "username" : "user_0",
+      "mobileNo" : 11111111,
+      "email" : "zero@gmail.com",
+      "licenseType" : "SuperAdmin",
+      "licenseStatus" : "ACTIVE",
+      "userrole" : "Super-Admin",
+      "noOfLicense" : 10,
+      "licenseKey" : "U2FsdGVkX19Mcy3lXzSy2Jb+vQfmP+lFZJls5mSFhowAIg+StG4+ww6Xv8q+Tzx8jchIcLqPx+n713IUVBEMEWxRyOBRHZ/qqr9bTICg/wGVcrANWZc1227FCptHJd6LGZI2ffBrVyddf7LIp9QaYvHPlFYjDEodzyaTa7KL7xC9ao6Pa2AhGe6IYpukqDEVdQn0S+gmgdsAsgPE+QRbO5i3tEm0p+y0leppWp3juQS6CHHpiBw5tae4waB9MHktezxPZiAuhngKROzgtU5M6/F1GUMP3Mf9Zq8eFlUoma+kQCkk+nju9J27h/1lznomXuJ7MQjZ1Z/4P2bUnX3sTxyizLttnJSRrErYTTHnSmKYG1mrkUXt/X5X/QiVkbizdoiXpUH6BDqDFu7i438MF/x+yq/kJfgszPMexDUWvP7Esv0+pmj24vleWqYbM89HVX86dtHn2/+PJjWC1w0OhJOWKg+x4oc490ecVPGv+/cH/pHk7DVAKAjzMFdnuAq609o0gBlxKCHIxteycKxaIlPs8YMFHSpuQ2lnffFTK5q0c7/qp1PuEnfFoIwfGsRRjG0jKE/9jnJezTkD9Hi7PVlMVHzDELtTpcWC44Og8kqnIIwJSFOh926Rq32vxIvlB1uvYhCwjocdTONFhlAuwHmb/O3AG4PY9s39O9DuUD2GBufVd724zho1Px9ZnRhtfJ57FbVkld7B1XVpgsUPiuXJ111c6MOndWG4S/h/D7Qa7aN7a6raR/4NokVR0V0s2Trj9AtfGwUK3F3zUfB1tg==",
+      "modules" : [
+        {
+          "moduleDesc" : "Mean Admin Module",
+          "listOfAPIs" : [
+            {
+              "apiURL" : "/license-manager/getUsers",
+              "apiName" : "getUsers"
+            },
+            {
+              "apiURL" : "/license-manager/getUsers",
+              "apiNaame" : "updateUser"
+            }
+          ],
+          "moduleName" : "mean-admin"
+        },
+        {
+          "moduleDesc" : "MEAN Mili App",
+          "listOfAPIs" : [
+            {
+              "apiURL" : "/mili-app/getData",
+              "apiName" : "getData"
+            },
+            {
+              "apiURL" : "/mili-app/updateData",
+              "apiNaame" : "updateData"
+            }
+          ],
+          "moduleName" : "mili-app"
+        }
+      ],
+      "company" : {
+        "companyId" : 1,
+        "companyName" : "abc"
+      },
+      "authenticationType" : "EMAIL"
+    }
+  ]
+}
+

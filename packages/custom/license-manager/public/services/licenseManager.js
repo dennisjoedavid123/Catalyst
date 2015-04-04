@@ -133,6 +133,7 @@ angular.module('mean.license-manager').factory('LicenseManagerFactory',function(
                 userRole : userData.userRole,
                 licenseType : userData.licenseType,
                 startDate : userData.startDate,
+                modules : userData.modules,
                 endDate : userData.endDate,
                 authenticattionType : userData.authenticationType,
                 licenseStatus : userData.licenseStatus,
@@ -190,6 +191,77 @@ angular.module('mean.license-manager').factory('LicenseManagerFactory',function(
                 returnData.msg = 'Fail : Error while validating the User License';
             });
             return returnData;
+        },
+        validateAPILicenseByUserName :  function(userName,moduleName,apiName){
+            var returnData = {
+                msg :'Success',
+                status : true,
+                response : null
+            };
+            $http.post('/licenseManager/validateAPILicenseByUserName',{
+                username : userName,
+                modulename : moduleName,
+                apiName : apiName
+            }).success( function (response){
+                returnData.status = true;
+                returnData.msg = 'Success';
+                returnData.response = response;
+            }).error( function(error){
+                returnData.status = false;
+                returnData.msg = 'Fail : Error while validating the User License';
+            });
+            return returnData;
+        },
+        validateAPILicense :  function(licenseKey){
+            var returnData = {
+                msg :'Success',
+                status : true,
+                response : null
+            };
+            $http.post('/licenseManager/validateAPILicense',{
+                licenseKey : licenseKey
+            }).success( function (response){
+                returnData.status = true;
+                returnData.msg = 'Success';
+                returnData.response = response;
+            }).error( function(error){
+                returnData.status = false;
+                returnData.msg = 'Fail : Error while validating the User License';
+            });
+            return returnData;
+        },
+        getSuperAdminUser : function(){
+            var returnData = {
+                msg :'Success',
+                status : true,
+                response : null
+            };
+            $http.post('/licenseManager/getSuperAdminUser').success( function (response){
+                returnData.status = true;
+                returnData.msg = 'Success';
+                returnData.response = response;
+            }).error( function(error){
+                returnData.status = false;
+                returnData.msg = 'Fail : Error while validating the User License';
+            });
+        },
+        getUserLicenses : function(companyId,userName){
+            var returnData = {
+                msg :'Success',
+                status : true,
+                response : null
+            };
+            $http.post('/licenseManager/getUserLicenses',{
+                companyId : companyId,
+                username  : userName
+            }).success( function (response){
+                returnData.status = true;
+                returnData.msg = 'Success';
+                returnData.response = response;
+            }).error( function(error){
+                returnData.status = false;
+                returnData.msg = 'Fail : Error while validating the User License';
+            });
         }
     };
 });
